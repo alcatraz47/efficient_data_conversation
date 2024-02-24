@@ -1,0 +1,7 @@
+pydantic
+pydantic-settings
+python-dotenv
+streamlit
+faiss-cpu
+langchain
+pymupdf
