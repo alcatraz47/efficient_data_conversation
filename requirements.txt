@@ -5,3 +5,4 @@ streamlit
 faiss-cpu
 langchain
 pymupdf
+sentence-transformers

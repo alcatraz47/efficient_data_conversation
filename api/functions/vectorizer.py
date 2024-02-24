@@ -15,10 +15,17 @@ def get_vectorizers(chunked_texts: list) -> object:
     Returns:
         (object): faiss vectorstore object
     """
-    embedding_creator = HuggingFaceEmbeddings(
-        model_name = settings.embedding_model_path,
-        model_kwargs={"device": "cpu"},
-        encode_kwargs={"normalize_embeddings": False}
-    )
+    if settings.use_gpu == 1:
+        embedding_creator = HuggingFaceEmbeddings(
+            model_name = "api/lang_models/multi-qa-mpnet-base-dot-v1",#settings.embedding_model_path,
+            model_kwargs={"device": "cuda"},
+            encode_kwargs={"normalize_embeddings": False}
+        )
+    else:
+        embedding_creator = HuggingFaceEmbeddings(
+            model_name = settings.embedding_model_path,
+            model_kwargs={"device": "cpu"},
+            encode_kwargs={"normalize_embeddings": False}
+        )
     return FAISS.from_texts(texts=chunked_texts,
                             embedding=embedding_creator)

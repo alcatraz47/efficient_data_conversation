@@ -1,5 +1,16 @@
 Efficient Data Conversation
+
 Chat with your data while uploading a pdf file and using a local LLM.
+
+Language Support:
+    1. English
+    2. Others are loading...
+
+Key Dependencies:
+
+    1. [Ollama](https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image) with or without GPU
+    2. Sentence-transformers
+    3. Langchain
 
 The models in use:
 
