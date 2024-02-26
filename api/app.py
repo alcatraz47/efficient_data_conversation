@@ -32,7 +32,7 @@ def main():
         layout="wide"
     )
 
-    st.header("Efficient Data Conversation: :green_book:")
+    st.header("Efficient Data Conversation:	:leopard:")
     st.subheader("Your PDF documents")
 
     # utility to upload pdf files
@@ -83,10 +83,10 @@ def main():
             st.session_state.state_counter+=1
             response = handle_user_input(user_question=user_question,
                         session_variable=st.session_state.conversation)
-            # if st.session_state.state_counter>2:
-            #     print("Resetting State")
-            #     st.session_state.conversation = get_conversation_chain(st.session_state.vectorstores)
-            #     st.session_state.state_counter = 0
+            if st.session_state.state_counter>2:
+                print("Resetting State")
+                st.session_state.conversation = get_conversation_chain(st.session_state.vectorstores)
+                st.session_state.state_counter = 0
             # ----------------------
             if response[-1].content:
                 # ----------------------

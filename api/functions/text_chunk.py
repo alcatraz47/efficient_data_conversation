@@ -17,7 +17,7 @@ def get_text_chunks(raw_text: str) -> list:
         list: list of texts in string format
     """
     text_splitter = SentenceTransformersTokenTextSplitter(
-        model_name="api/lang_models/multi-qa-mpnet-base-dot-v1",#settings.embedding_model_path,
+        model_name=settings.embedding_model_path,#settings.embedding_model_path,
         tokens_per_chunk=settings.tokens_per_chunk,
         chunk_overlap=0
     )
