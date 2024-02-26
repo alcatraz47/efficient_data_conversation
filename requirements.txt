@@ -6,3 +6,4 @@ faiss-cpu
 langchain
 pymupdf
 sentence-transformers
+qudrant-client

@@ -20,11 +20,15 @@ def main():
         st.session_state.conversation = None
     if "question" not in st.session_state:
         st.session_state.question = ""
+    if "state_counter" not in st.session_state:
+        st.session_state.state_counter = -1
+    if "vectorstores" not in st.session_state:
+        st.session_state.vectorstores = None
 
     # just some ornamenting codes
     st.set_page_config(
         page_title="Efficient Data Conversation",
-        page_icon=":green_book:",
+        page_icon=":cat2:",
         layout="wide"
     )
 
@@ -47,8 +51,10 @@ def main():
             # print(text_chunks)
             # get vectorstores
             vectorstores = get_vectorizers(chunked_texts=text_chunks)
+            st.session_state.vectorstores = vectorstores
             # conversation chain construction
             st.session_state.conversation = get_conversation_chain(vectorstores)
+            # print(st.session_state.conversation)
 
     if user_question := st.text_input("Any queries about the PDFs? : ", key="widget1", on_change=single_question):
         #to avoid focusing issue in streamlit
@@ -74,8 +80,13 @@ def main():
         #===================================
 
         if st.session_state.conversation:
+            st.session_state.state_counter+=1
             response = handle_user_input(user_question=user_question,
                         session_variable=st.session_state.conversation)
+            # if st.session_state.state_counter>2:
+            #     print("Resetting State")
+            #     st.session_state.conversation = get_conversation_chain(st.session_state.vectorstores)
+            #     st.session_state.state_counter = 0
             # ----------------------
             if response[-1].content:
                 # ----------------------
