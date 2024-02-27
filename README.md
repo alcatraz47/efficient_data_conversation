@@ -19,14 +19,9 @@ Chat with your data while uploading a pdf file and using a local LLM.
 4. Up coming: meta data support
 
 #### Language Support: ####
+
 1. English
 2. Others are loading...
-
-#### System Support: ####
-
-1. Integrated frontend with Streamlit
-2. Up-coming: Separated backend support
-3. Up-coming: Docker support
 
 #### Key Dependencies ####
 
@@ -52,6 +47,26 @@ The models in use:
 
 ![plot](./directory.png)
 
+### Installation Guidelines: ##
+
+1. OS tested: `Ubuntu>=20.04 LTS`
+2. Create a `Python>=3.11` environment using conda or virtual env
+3. Use the requirements file to install the dependencies:
+```
+pip install -r requirements.txt
+```
+4. Use **Ollama** docker and **Huggingface** to pull/download all the models, refer to section: **Key Dependencies** for details and where to store the models inside your machine.
+5. Set the `.env` file according to the `.env.example` structure
+6. From the parent directory, to run the system, execute the command below in the termnal:
+```
+streamlit run api/app.py
+```
+
+#### System Support: ####
+
+1. Integrated frontend with Streamlit
+2. Up-coming: Separated backend support
+3. Up-coming: Docker support
 
 Credits and special thanks to my friends:
 
