@@ -4,12 +4,12 @@ Chat with your data while uploading a pdf file and using a local LLM.
 
 ### Table of Contents ###
 
-* [PDF File Structure Support](#pdf-file-structure-support)
-* [Language Support](#language-support)
-* [Key Dependencies](#key-dependencies)
-* [Setup Guidelines](#setup-guidelines)
-* [System Support](#system-support)
-* [Credits](#credits-and-special-thanks-to-my-friends)
+* [PDF File Structure Support](#pdf_structure)
+* [Language Support](#language_support)
+* [Key Dependencies](#key_dependencies)
+* [Setup Guidelines](#setup_guidelines)
+* [System Support](#system_support)
+* [Credits](#credits)
 
 #### PDF File Structure Support: <a name="pdf_structure"></a> ####
 
@@ -78,7 +78,7 @@ streamlit run api/app.py
 2. Up-coming: Separated backend support
 3. Up-coming: Docker support
 
-#### Credits and special thanks to my friends: <a name="credits"></a>####
+#### Credits and special thanks to my friends: <a name="credits"></a> ####
 
 1. Sharif Ahamed, MSc. in AI, University of Bradford, Bradford, United Kingdom, [Email](sharifahamed485@gmail.com):
     * For advising me through
