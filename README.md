@@ -53,7 +53,7 @@ The models in use:
 ![plot](./directory.png)
 
 
-Credits and special thansk to my friends:
+Credits and special thanks to my friends:
 
-1. Sharif Ahamed: sharifahamed485@gmail.com
-2. Soroush Yaghoubi.
+1. Sharif Ahamed: sharifahamed485@gmail.com (for advising me through)
+2. Soroush Yaghoubi. (for the frontend idea and more works in future)
