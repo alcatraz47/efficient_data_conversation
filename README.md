@@ -13,7 +13,7 @@ Chat with your data while uploading a pdf file and using a local LLM.
 
 #### PDF File Structure Support: <a name="pdf_structure"></a> ####
 
-1. Files with well organized tables i.e.: a single row/column ins not divided in multi row/column
+1. Upcoming:Files with well organized tables i.e.: a single row/column ins not divided in multi row/column
 2. Usually Research Paper Structure:
     * Abstract
     * Intorduction
