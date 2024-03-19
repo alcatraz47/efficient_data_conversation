@@ -46,8 +46,14 @@ def get_conversation_chain(vectorstore: object) -> object:
         memory_key="chat_history",
         return_messages=True
     )
+    # return ConversationalRetrievalChain.from_llm(
+    #     llm=language_model,
+    #     retriever=vectorstore.as_retriever(search_type="mmr", search_kwargs = {"k": 5}),
+    #     memory=memory
+    # )
+
     return ConversationalRetrievalChain.from_llm(
         llm=language_model,
-        retriever=vectorstore.as_retriever(search_type="mmr", search_kwargs = {"k": 5}),
+        retriever=vectorstore,
         memory=memory
     )

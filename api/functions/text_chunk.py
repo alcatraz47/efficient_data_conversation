@@ -17,8 +17,12 @@ def get_text_chunks(raw_text: str) -> list:
         list: list of texts in string format
     """
     text_splitter = SentenceTransformersTokenTextSplitter(
-        model_name=settings.embedding_model_path,#settings.embedding_model_path,
+        model_name=settings.embedding_model_path,
         tokens_per_chunk=settings.tokens_per_chunk,
         chunk_overlap=0
     )
-    return text_splitter.split_text(raw_text)
+    chunked_texts = text_splitter.split_text(raw_text)
+
+    del text_splitter
+
+    return chunked_texts

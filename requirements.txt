@@ -7,3 +7,5 @@ langchain
 pymupdf
 sentence-transformers
 qdrant-client
+rank-bm25
+unstructured

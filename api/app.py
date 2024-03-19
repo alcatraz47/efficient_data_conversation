@@ -48,12 +48,11 @@ def main():
             raw_text = read_pdf(pdf_docs=pdf_docs)
             # chunk texts into small pieces
             text_chunks = get_text_chunks(raw_text=raw_text)
-            # print(text_chunks)
             # get vectorstores
-            vectorstores = get_vectorizers(chunked_texts=text_chunks)
-            st.session_state.vectorstores = vectorstores
+            vectorstore = get_vectorizers(chunked_texts=text_chunks)
+            st.session_state.vectorstores = vectorstore
             # conversation chain construction
-            st.session_state.conversation = get_conversation_chain(vectorstores)
+            st.session_state.conversation = get_conversation_chain(vectorstore)
             # print(st.session_state.conversation)
 
     if user_question := st.text_input("Any queries about the PDFs? : ", key="widget1", on_change=single_question):
